@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import svm
 import matplotlib
-file = open("CSCI3230_SVM Q2Training.csv")
+file = open("CSCI3230_SVM TrainingQ2.csv")
 X = np.loadtxt(file, delimiter=",", skiprows=1, usecols=(0, 1))
 file.seek(0)
 y = np.loadtxt(file, delimiter=",", skiprows=1, usecols=2)
@@ -43,7 +43,7 @@ plot_svc_decision_function(clf, None, True)
 plt.title("Q2 Training")
 plt.show()
 
-file = open("CSCI3230_SVM Q2Test.csv")
+file = open("CSCI3230_SVM TestQ2.csv")
 testX = np.loadtxt(file, delimiter=",", skiprows=1, usecols=(0, 1))
 file.seek(0)
 testy = np.loadtxt(file, delimiter=",", skiprows=1, usecols=2)
