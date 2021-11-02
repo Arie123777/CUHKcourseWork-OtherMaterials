@@ -1,0 +1,221 @@
+\documentclass[12pt]{article}
+\setlength{\headheight}{24pt}
+\usepackage[top=1.5in, bottom=1in, left=0.5in, right=0.5in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mwe} % for blindtext and example-image-a in example
+\usepackage{wrapfig}
+\usepackage{url}
+\graphicspath{{./LoveAiri/Downloads/}}
+\begin{document}
+\fancypagestyle{firstpage}{%
+  \lhead{\textit{\textbf{Name: Lai Man Hin}}}
+  \chead{\textit{\textbf{SID: 1155136167}}}
+  \rhead{\textit{\textbf{CSCI3230/ESTR3108 Assg1}}}
+}
+\thispagestyle{firstpage}
+CSCI3230 / ESTR3108 2021-22 First Term Assignment 1\\
+I declare that the assignment here submitted is original except for source material explicitly acknowledged, and that the same or closely related material has not been previously submitted for another course. I also acknowledge that I am aware of University policy and regulations on honesty in academic work, and
+of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, as contained in the following websites.\\
+University Guideline on Academic Honesty:\\
+\url{http://www.cuhk.edu.hk/policy/academichonesty/}\\
+Faculty of Engineering Guidelines to Academic Honesty:\\
+\url{http://www.erg.cuhk.edu.hk/erg-intra/upload/documents/ENGG_Discipline.pdf}\\
+Student Name: \textit{\textbf{Lai Man Hin}}\\
+Student ID : \textit{\textbf{1155136167}}\\
+\begin{wrapfigure}[13]{r}{0.5\textwidth}
+\includegraphics[scale=0.5]{Figure_1}\\
+\includegraphics[scale=0.5]{Figure_2}
+\end{wrapfigure}
+
+\textbf{1a)}\\
+By $\Theta = (X^{^{T}}X)^{-1}X^{^{T}}Y$
+\[
+\Theta = \begin{bmatrix}
+-0.12471382\\0.15748272\\
+\end{bmatrix}
+\]
+which $\theta_{0} = -0.12471382, \theta_{1} = 0.15748272$\\[0.2in]
+Figure is shown at right hand side.\paragraph{\\[0.4in]}
+\textbf{1b)}\\
+By $\Theta = (X^{^{T}}X)^{-1}X^{^{T}}Y$
+\[
+\Theta = \begin{bmatrix}
+2.38902063\\-1.07370721\\0.1252789
+\end{bmatrix}
+\]
+which $\theta_{0} = 2.38902063, \theta_{1} = -1.07370721,\\ \theta_{2} = 0.1252789$\\[0.2in] 
+Figure is shown at right hand side. \paragraph{\\[0.0in]}
+\newpage
+\newgeometry{top=0.5in, bottom=1in, left=0.5in, right=0.5in}
+\begin{wrapfigure}[8]{r}{0.5\textwidth}
+\includegraphics[scale=0.5]{Figure_3}
+\end{wrapfigure}
+\textbf{1c)}\\
+By $\Theta = (X^{^{T}}X)^{-1}X^{^{T}}Y$
+\[
+\Theta = \begin{bmatrix}
+-6.80776406\\10.91680274\\-4.60513794\\0.73170903\\-0.03884038
+\end{bmatrix}
+\]
+which $\theta_{0} = -6.80776406, \theta_{1} = 10.91680274,\\ \theta_{2} = -4.60513794, \theta_{3} = 0.73170903,\\ \theta_{4} = -0.03884038$\\[0.2in] 
+Figure is shown at right hand side.\paragraph{\\[0.0in]}
+
+\textbf{1d)}\\
+By
+\[EPE(X) = E((y - \hat{f}(X))^{2})\]
+With summarising values,\\
+In 1a) , $EPE(X) = 9.415644$\\
+In 1b) , $EPE(X) = 5.013401$\\
+In 1c) , $EPE(X) = 19.504463$\\[0.2in]
+Therefore,\\ 1a) is underfitting,\\ 1b) is relatively a good one,\\ 1c) is overfitting.\paragraph{\\}
+\textbf{2a)}\\
+By differentiating towards $\theta_{0}$,\\
+\begin{align*}
+\dfrac{\partial J(\Theta, \theta_{0})}{\partial \theta_{0}} &= \sum_{i=1}^{m} 2(X^{(i)} - \bar{X})\Theta + \theta_{0} + \bar{X}\Theta - Y^{(i)}\\
+&= \sum_{i=1}^{m} 2X^{(i)}\Theta - \bar{X}\Theta + \theta_{0} - Y^{(i)}\\ 
+&= 2m\bar{X}\Theta - m\bar{X}\Theta + m\theta_{0} - m\bar{Y}  \\
+&= m\bar{X}\Theta + m\theta_{0} - m\bar{Y}
+\end{align*}\\
+By letting $\dfrac{\partial J(\Theta, \theta_{0})}{\partial \theta_{0}} = 0$,\\
+\begin{align*}0 = m\bar{X}\Theta + m\theta_{0} - m\bar{Y}\\
+0 = \bar{X}\Theta + \theta_{0} - \bar{Y}\\
+\theta_{0} = \bar{Y} - \bar{X}\Theta
+\end{align*}
+Therefore, when $\theta_{0} = \bar{Y} - \bar{X}\Theta$, we will get the minimum value for $J(\Theta, \theta_{0})$.\paragraph{\\}
+\textbf{2b)}\\
+Considering $Y^{(i)} = Y^{(i)}_{c} + \bar{Y}$ and plugging in $\theta_{0}$,\\
+\begin{align*}
+J(\Theta, \theta_{0}) = J_{c}(\Theta) &= \sum_{i=1}^{m}(X_{c}^{(i)}\Theta + \bar{Y} - \bar{X}\Theta + \bar{X}\Theta - Y^{(i)}_{c} - \bar{Y})^{2} + \lambda\Vert\Theta\Vert_{2}^{2}\\
+&= \sum_{i=1}^{m}(X_{c}^{(i)}\Theta - Y^{(i)}_{c})^{2} + \lambda\Vert\Theta\Vert_{2}^{2}
+\end{align*}
+\paragraph{\\}
+\textbf{2c)}\\
+\begin{align*}
+J_{c}(\Theta) &= \sum_{i=1}^{m}(X_{c}^{(i)}\Theta - Y^{(i)}_{c})^{2} + \lambda\Vert\Theta\Vert_{2}^{2}\\
+\end{align*}
+By considering the minimum value of this formula can be obtained by the sum of each minimum part of summation, so I will remove the summation sign here and then take derivatives,
+\begin{align*}
+J_{c}^{'}(\Theta) &= \dfrac{\partial}{\partial\Theta}((X_{c}\Theta - Y_{c})^{T}(X_{c}\Theta - Y_{c}) + \lambda\Theta^{T}\Theta)\\
+&= \dfrac{\partial}{\partial\Theta}( \Theta^{T}X_{c}^{T}X_{c}\Theta - \Theta^{T}X_{c}^{T}Y_{c} - Y_{c}^{T}X_{c}\Theta + Y_{c}^{T}Y_{c} + \lambda\Theta^{T}\Theta)\\
+&= 2X_{c}^{T}X_{c}\Theta - X_{c}^{T}Y_{c} - X_{c}^{T}Y_{c} + 2\lambda\Theta\\
+&= 2X_{c}^{T}X_{c}\Theta - 2X_{c}^{T}Y_{c} + 2\lambda\Theta\\
+\end{align*}
+By taking $J_{c}^{'} = 0$,\\
+\begin{align*}
+0 &= 2X_{c}^{T}X_{c}\Theta - 2X_{c}^{T}Y_{c} + 2\lambda\Theta\\
+2X_{c}^{T}Y_{c} &= 2X_{c}^{T}X_{c}\Theta + 2\lambda\Theta\\
+X_{c}^{T}Y_{c} &= (X_{c}^{T}X_{c}+ \lambda I)\Theta\\
+\Theta &= (X_{c}^{T}X_{c}+ \lambda I)^{-1}X_{c}^{T}Y_{c}
+\end{align*}
+Therefore, the analytic solution $\hat{\Theta} = (X_{c}^{T}X_{c}+ \lambda I)^{-1}X_{c}^{T}Y_{c}$ .\paragraph{\\}
+\newpage
+\textbf{3a)}\\ 
+Logistic model
+\[ P(\hat{y} = 1\mid x_{1}, x_{2}) = \frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2})}}\]
+Cross-entropy function
+\[-y^{(i)}\ln(P(\hat{y} = 1\mid x_{1}, x_{2})) - (1-y^{(i)})\ln(1-P(\hat{y} = 1\mid x_{1}, x_{2}))\]
+Plug-in logistic model,
+\[-y^{(i)}\ln(\frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2})}}) - (1-y^{(i)})\ln(1-\frac{1}{1+e^{-(\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2})}})\]
+\paragraph{\\}
+\textbf{3b)}
+New regression model $\hat{\Theta}$
+\begin{align*}
+\hat{\Theta} &= \Theta - \alpha \sum_{i=1}^{m}\Bigg(\frac{1}{e^{-X^{(i)^{T}}\Theta}} - y^{(i)}\Bigg)X^{(i)}\\
+&= \begin{bmatrix}
+-1\\1.5\\0.5
+\end{bmatrix} - 0.1\Bigg( \begin{bmatrix}
+0.47726569\\0.16513393\\0.37226724
+\end{bmatrix} +
+\begin{bmatrix}
+0.4192142\\0.1270219\\0.18403503
+\end{bmatrix} +
+\begin{bmatrix}
+0.47539489\\0.17019137\\0.34656288
+\end{bmatrix} \\&+
+\begin{bmatrix}
+1.39724159\\0.84113944\\1.20581949
+\end{bmatrix} +
+\begin{bmatrix}
+1.75330048\\1.38510738\\1.32023526
+\end{bmatrix} +
+\begin{bmatrix}
+-1.01899756\\1.53210518\\0.51181202
+\end{bmatrix}\Bigg)\\
+&= \begin{bmatrix}
+-1.01899756\\1.53210518\\0.51181202
+\end{bmatrix}
+\end{align*}
+Therefore, the updated function is \[ P(\hat{y} = 1\mid x_{1}, x_{2}) = \frac{1}{1+e^{-(-1.01899756+1.53210518x_{1}+0.51181202x_{2})}}\]
+\paragraph{\\}
+\textbf{3c)}\\
+Index 1 (y = 0): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.656064168$, FP\\
+Index 2 (y = 0): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.571187019$, FP\\
+Index 3 (y = 0): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.493790599$, TN\\
+Index 4 (y = 1): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.653157925$, TP\\
+Index 5 (y = 1): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.644341574$, TP\\
+Index 6 (y = 1): $ P(\hat{y} = 1\mid x_{1}, x_{2}) = 0.621692311$, TP\\
+Therefore, we have 3 TP, 1 TN, 2 FP, 0 FN\\[0.2in]
+Accuracy = $\frac{3+1}{3+1+2+0} = \frac{2}{3}$\\
+Precision = $\frac{3}{3+2} = \frac{3}{5}$\\
+Recall = $\frac{3}{3+0} = 1$\\
+\paragraph{\\}
+\textbf{4a)}\\
+I will find the partial derivatives of 
+\[P(\hat{y}_{i} = 1\mid X) = \frac{e^{X^{T}\Theta_{i}}}{\sum_{k=1}^{K}e^{X^{T}\Theta_{k}}} \]
+by quotient rule.\\[0.1in]
+Case 1: $i = j$\\
+\begin{align*}
+\dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}}= \dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{i}} &= \frac{e^{X^{T}\Theta_{i}}\sum_{k=1}^{K}e^{X^{T}\Theta_{k}} - (e^{X^{T}\Theta_{i}})^{2}}{(\sum_{k=1}^{K}e^{X^{T}\Theta_{k}})^{2}}\\
+&= \frac{e^{X^{T}\Theta_{i}}}{\sum_{k=1}^{K}e^{X^{T}\Theta_{k}}} - \Bigg(\frac{e^{X^{T}\Theta_{i}}}{\sum_{k=1}^{K}e^{X^{T}\Theta_{k}}}\Bigg)^{2}\\
+&=  P(\hat{y}_{i} = 1\mid X) - ( P(\hat{y}_{i} = 1\mid X))^{2}\\
+&=  P(\hat{y}_{i} = 1\mid X)(1 -  P(\hat{y}_{j} = 1\mid X))
+\end{align*}
+Case 2: $i \neq j$
+\begin{align*}
+\dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}} &= \frac{0 - (e^{X^{T}\Theta_{i}})(e^{X^{T}\Theta_{j}})}{(\sum_{k=1}^{K}e^{X^{T}\Theta_{k}})^{2}}\\
+&=  - \Bigg(\frac{(e^{X^{T}\Theta_{i}})(e^{X^{T}\Theta_{j}})}{(\sum_{k=1}^{K}e^{X^{T}\Theta_{k}})(\sum_{k=1}^{K}e^{X^{T}\Theta_{k}})}\Bigg)\\
+&= - P(\hat{y}_{i} = 1\mid X) P(\hat{y}_{j} = 1\mid X)
+\end{align*}
+Therefore,\\
+\[ \dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}} = \begin{cases} P(\hat{y}_{i} = 1\mid X)(1 -  P(\hat{y}_{j} = 1\mid X)) &\text{if } x = y\\- P(\hat{y}_{i} = 1\mid X) P(\hat{y}_{j} = 1\mid X) &\text{if } x \neq y \end{cases}\]\paragraph{\\}
+\textbf{4b)}\\
+Considering
+\begin{align*}
+\dfrac{\partial X^{T}\Theta_{j}}{\partial \Theta_{j}} &= (X^{T})^{T}\\
+&= X
+\end{align*}
+Therefore, by using a) and above result,\\
+\begin{align*}
+\dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial \Theta_{j}} &= \dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}} \dfrac{\partial X^{T}\Theta_{j}}{\partial \Theta_{j}}\\
+&= \begin{cases} P(\hat{y}_{i} = 1\mid X)(1 -  P(\hat{y}_{j} = 1\mid X))X &\text{if } x = y\\- P(\hat{y}_{i} = 1\mid X) P(\hat{y}_{j} = 1\mid X)X &\text{if } x \neq y \end{cases}
+\end{align*}\paragraph{\\}
+\textbf{4c)}\\
+Considering
+\begin{align*}
+\dfrac{\partial E(\Theta)}{\partial P(\hat{y}_{i} = 1 \mid X)} &= \dfrac{\partial -\sum^{K}_{i=1}y_{i}\ln P(\hat{y}_{i} = 1 \mid X)}{\partial P(\hat{y}_{i} = 1 \mid X)}\\
+&= -\sum^{K}_{i=1}\Bigg( \dfrac{\partial y_{i}\ln P(\hat{y}_{i} = 1 \mid X)}{\partial P(\hat{y}_{i} = 1 \mid X)}\Bigg)\\
+&= -\sum^{K}_{i=1}\Bigg( 0 + y_{i}\frac{1}{P(\hat{y}_{i} = 1 \mid X)}\Bigg)\\
+&= -\sum^{K}_{i=1}\Bigg( \frac{y_{i}}{P(\hat{y}_{i} = 1 \mid X)}\Bigg)\\
+&= \frac{-1}{P(\hat{y}_{i} = 1 \mid X)} &\text{Since only one of the } y_{i} \text{ will be }1
+\end{align*}
+Therefore, combining above and b),\\[0.1in]
+Case 1: $i = j$
+\begin{align*}
+\dfrac{\partial E(\Theta)}{\partial\Theta_{j}} &= \dfrac{\partial E(\Theta)}{\partial P(\hat{y}_{i} = 1 \mid X)} \dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}} \dfrac{\partial X^{T}\Theta_{j}}{\partial \Theta_{j}}\\
+&= \frac{-1}{P(\hat{y}_{i} = 1 \mid X)} P(\hat{y}_{i} = 1\mid X)(1 -  P(\hat{y}_{j} = 1\mid X))X\\
+&= (P(\hat{y}_{j} = 1\mid X) - 1)X\\
+&= XP(\hat{y}_{j} = 1\mid X) - X\\
+&= XP(\hat{y}_{j} = 1\mid X) - Xy_{j} &&\text{By case condition, } i = j \text{ means } j \text{ is the} \\&&& \text{ true class, so } y_{j} \text{ must be 1}\\
+\end{align*}
+Case 2: $i \neq j$
+\begin{align*}
+\dfrac{\partial E(\Theta)}{\partial\Theta_{j}} &= \dfrac{\partial E(\Theta)}{\partial P(\hat{y}_{i} = 1 \mid X)} \dfrac{\partial P(\hat{y}_{i} = 1\mid X)}{\partial X^{T}\Theta_{j}} \dfrac{\partial X^{T}\Theta_{j}}{\partial \Theta_{j}}\\
+&= \frac{-1}{P(\hat{y}_{i} = 1 \mid X)}(- P(\hat{y}_{i} = 1\mid X)(P(\hat{y}_{j} = 1\mid X))X)\\
+&= P(\hat{y}_{i} = 1\mid X) X\\
+&= XP(\hat{y}_{j} = 1\mid X) - Xy_{j} &&\text{By case condition, } i \neq j \text{ means } j \text{ is \textbf{NOT} the} \\&&& \text{ true class, so } y_{j} \text{ must be 0}\\
+\end{align*}
+Combining 2 cases,
+\[ \dfrac{\partial E(\Theta)}{\partial\Theta_{j}} = XP(\hat{y}_{j} = 1\mid X) - Xy_{j}\]
+\end{document}
