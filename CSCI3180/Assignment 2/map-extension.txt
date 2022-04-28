@@ -1,0 +1,29 @@
+11 11 70 5 5 9 3 
+P P P P P P P P P P P
+P P M P P P P P P P P
+P P M P P M M P P P P
+P P M P P M M P P P P
+P P M S S M M P P M M
+P P M S S M M P P M M
+P S M S S M M P P M M
+S P P S S P P P P M M
+P M P M M M M S S M M
+P M P M M M M S S M M
+P M P P P P P P P P P
+3 3 R R L L
+4 7 U U U U D D D D D D D U U U
+7 3 U U U U U U U D D D D D D D
+7 8 U U U U U U U D D D D D D D
+10 3 R R R R R R R L L L L L L L
+3 4
+0 8
+0 9
+1 9
+1 10
+2 8
+2 9
+2 10
+5 1
+5 2 7
+6 9 3
+9 5 4 
