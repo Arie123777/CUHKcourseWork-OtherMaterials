@@ -1,0 +1,53 @@
+<!--Name: Lai Man Hin   SID: 1155136167-->
+<html>
+    <body>
+        <h1>My new Event</h1>
+        <form action="http://localhost:3000/event" method="post">
+            <input type="text" name="eventName" placeholder="Event name ">
+            <input type="text" name="eventLoc" placeholder="Event location ">
+            <input type="text" name="eventQuota" placeholder="Event quota ">
+            <input type="submit" value="submit">
+        </form>
+        <br>
+        <h1>Edit Event</h1>
+        <form name="edit">
+            Event ID: <br> <input type="text" name="eventId"> <br>
+            Event Name: <br> <input type="text" name="eventName2"> <br>
+            Event Location ID: <br> <input type="text" name="eventLoc2"> <br>
+            Event Quota: <br> <input type="text" name="eventQuota2">
+            <br>
+            <button type="button" onclick="processShow()">Show Details</button>
+            <button type="button" onclick="processEdit()">Submit</button>
+            <p id="response"></p>
+        </form>
+        <script>
+            function processShow()
+            {
+                document.querySelector("#response").innerHTML = "";
+                const myrequest = {
+                    method: 'GET',
+                    headers:{'Content-Type':'application/json'}
+                };
+                fetch('http://localhost:3000/event/' + document.querySelector('[name = "eventId"]').value, myrequest).then(e => e.text()).then(e => {
+                    let update = JSON.parse(e);
+                    document.querySelector('[name = "eventName2"]').value = update.name;
+                    document.querySelector('[name = "eventLoc2"]').value = update.loc.locId;
+                    if (!isNaN(update.quota))
+                        document.querySelector('[name = "eventQuota2"]').value = update.quota;
+                });
+            }
+            function processEdit()
+            {   
+                const myrequest = {
+                    method: 'PUT',
+                    headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({eventId: document.querySelector('[name = "eventId"]').value, 
+                eventName: document.querySelector('[name = "eventName2"]').value,
+                eventLoc: document.querySelector('[name = "eventLoc2"]').value,
+                eventQuota: document.querySelector('[name = "eventQuota2"]').value})
+                };
+                fetch('http://localhost:3000/event/' + document.querySelector('[name = "eventId"]').value, myrequest).then((e) => document.querySelector("#response").innerHTML = "Update Success!");
+            }
+        </script>
+    </body>
+</html>
